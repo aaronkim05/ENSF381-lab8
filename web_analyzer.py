@@ -39,7 +39,6 @@ extracted_text = soup.get_text().split()
 new_list = []
 for stuff in extracted_text:
     new_list.append(stuff.lower())
-
 print(new_list)
 
 new_list_copy = new_list.copy()
@@ -49,6 +48,9 @@ brand_new_list = []
 for i in new_list_copy:
     if i not in brand_new_list:
         brand_new_list.append(i)
+
+
+print(brand_new_list)
 
 
 empty_array = []
@@ -76,10 +78,15 @@ for i in range(5):
 print(most_frequent_in_order)
 
 
+# Possible solutions at the bottom 
 
+# for keywords -- I think this is what they meant (but its copied) (maybe we should ask prof what exactly they mean)
 
-
-
+cleaned_words = []
+for word in words:
+    clean_word = "".join(char for char in word if char.isalnum())
+    if clean_word:
+        cleaned_words.append(clean_word)
 
 
 
