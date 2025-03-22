@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import requests
 from bs4 import BeautifulSoup
+
 url = "https://en.wikipedia.org/wiki/University_of_Calgary"
 
 try:
