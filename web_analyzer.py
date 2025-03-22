@@ -57,11 +57,11 @@ word_frequencies = {}
 for word in words_clean:
     word_frequencies[word] = word_frequencies.get(word, 0) + 1
 
-top_five_words = sorted(word_frequencies.items(), key=lambda x: x[1], reverse=True)[:5]
+top_five_words = sorted(word_frequencies, key=word_frequencies.get, reverse=True)[:5]
 
 print("Top 5 words with most frequencies:")
-for word, freq in top_five_words:
-    print(f"{word}: {freq}")
+for word in top_five_words:
+    print(f"{word}: {word_frequencies[word]}")
 
 # 6 -------------------------------
 
