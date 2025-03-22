@@ -75,6 +75,6 @@ for i, j in top_five_words:
 labels = ['Headings', 'Links', 'Paragraphs']
 values = [headings, links, paragraphs]
 plt.bar(labels, values)
-plt.title('Put your Group# Here')
+plt.title('Group# 35')
 plt.ylabel('Count')
 plt.show()
