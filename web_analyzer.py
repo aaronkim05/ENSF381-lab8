@@ -64,13 +64,25 @@ for word in top_five_words:
     print(f"{word}: {word_frequencies[word]}")
 
 # 6 -------------------------------
-
-
-
-
-
-
-
+maxP = 0
+count = 0
+count2 = 0
+temp = []
+for word in raw_words:
+    temp2 = list(word)
+    if temp2[len(temp2)-1] == '.' and (f'{temp2[len(temp2)-2]}'.isalpha() or temp2[len(temp2)-2] == ')'):
+        if count > maxP:
+            count2+=1
+            if count2 > 1:
+                for i in range(0, count):
+                    temp.pop(0)
+            maxP = count  
+        count = 0
+    else:
+        temp.append(word)
+    count+=1
+print(''.join(temp))
+print(f"The number of words in the longest paragraph is: {maxP}") 
 
 # 7 ------------------------------
 labels = ['Headings', 'Links', 'Paragraphs']
