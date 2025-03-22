@@ -21,7 +21,7 @@ headings = 0
 for i in range(1, 7):
     headings += len(soup.find_all(f"h{i}"))
 
-print(f"Number of: {headings}")
+print(f"Number of headings: {headings}")
 
 links = 0
 links += len(soup.find_all(f"a"))
@@ -34,33 +34,33 @@ print(f"Number of paragraphs: {paragraphs}")
 # 4 -------------------------
 
 text = soup.get_text()
-words = text.lower().split()
-key_words = []
+raw_words = text.split()
+words_clean = []
 
-for i in words:
-    key_word = "".join(char for char in i if char.isalnum())
-    if key_word:
-        key_words.append(key_word)
+for word in raw_words:
+    cleaned = "".join(ch for ch in word if ch.isalnum()).lower()
+    if cleaned:
+        words_clean.append(cleaned)
 
-user_key_word = input("Enter keyword: ").strip()
+search = input("Enter keyword: ").strip().lower()
 
-key_word_count = key_words.count(user_key_word.lower())
+search_count = words_clean.count(search)
 
-print(f"The keyword {user_key_word} appears {key_word_count} times")
+print(f"The keyword {search} appears {search_count} times")
 
 
 # 5 -------------------------------
 
 word_frequencies = {}
 
-for i in key_words:
-    word_frequencies[i] = word_frequencies.get(i, 0) + 1
+for word in words_clean:
+    word_frequencies[word] = word_frequencies.get(word, 0) + 1
 
 top_five_words = sorted(word_frequencies.items(), key=lambda x: x[1], reverse=True)[:5]
 
 print("Top 5 words with most frequencies:")
-for i, j in top_five_words:
-    print(f"{i}: {j}")
+for word, freq in top_five_words:
+    print(f"{word}: {freq}")
 
 # 6 -------------------------------
 
