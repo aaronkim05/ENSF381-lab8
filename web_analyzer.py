@@ -65,11 +65,22 @@ for word in top_five_words:
 
 # 6 -------------------------------
 
+all_paragraphs = soup.find_all("p")
 
+longest_paragraph = ""
+max_words = 0
 
+for p in all_paragraphs:
+    text = p.get_text(strip=True)
+    words = text.split()
+    if len(words) < 5:
+        continue
+    if len(words) > max_words:
+        max_words = len(words)
+        longest_paragraph = text
 
-
-
+print(f"Longest Paragraph: {longest_paragraph}")
+print(f"Number of words: {max_words}")
 
 
 # 7 ------------------------------
