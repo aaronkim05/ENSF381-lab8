@@ -64,3 +64,17 @@ for i, j in top_five_words:
 
 # 6 -------------------------------
 
+
+
+
+
+
+
+
+# 7 ------------------------------
+labels = ['Headings', 'Links', 'Paragraphs']
+values = [headings, links, paragraphs]
+plt.bar(labels, values)
+plt.title('Put your Group# Here')
+plt.ylabel('Count')
+plt.show()
